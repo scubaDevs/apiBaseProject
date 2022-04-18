@@ -4,11 +4,18 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mainRoutes from './routes';
 import path from 'path';
+import {Pool} from 'pg';
 
 
 
 dotenv.config();
 
+const pool = new Pool({
+  connectionString: process.env.PG_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const server = express()
 server.use(cors());
