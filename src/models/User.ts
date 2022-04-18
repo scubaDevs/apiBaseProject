@@ -25,5 +25,6 @@ export const User = sequelize.define<ApiUser>('User',{
 },
 {
     tableName:'users',
+    timestamps: false
 
 });

@@ -14,7 +14,7 @@ const server = express()
 server.use(cors());
 server.use(express.urlencoded({extended:false}));
 server.use(express.static(path.join(__dirname,'../public')));
-server.use( '/', mainRoutes);
+server.use(mainRoutes);
 server.use(function(req:Request, res:Response) {
     res.send('404: Page not Found');
   });

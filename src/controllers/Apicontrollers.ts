@@ -19,11 +19,16 @@ export const home = async  (req:Request,res: Response)=>{
         console.log("Deu erro: ", error)
     }
     res.json({msg: 'Olá mundo!'})
-}
+};
 
 export const createNewUser = async (req:Request,res:Response)=>{
         let email:string = req.body.email;
         let pass:string = req.body.pass;
-        let newUser = await User.create({email,pass});
+        let newUser = await User.create({email: email,pass: pass});
         res.json({user: newUser})
+        res.end();
 }
+
+export const homePost = (req:Request,res:Response)=>{
+    res.json({message:"Funcionou"})
+};
