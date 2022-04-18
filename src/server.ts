@@ -2,7 +2,7 @@ import express from 'express';
 import {Request,Response} from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import mainRoutes from '../src/routes/routes';
+import mainRoutes from './routes';
 import path from 'path';
 
 
