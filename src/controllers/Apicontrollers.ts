@@ -24,5 +24,7 @@ export const home = async  (req:Request,res: Response)=>{
 export const createNewUser = async (req:Request,res:Response)=>{
         let email:string = req.body.email;
         let pass:string = req.body.pass;
+        console.log(email, pass)
         let newUser = await User.create({email,pass})
+        res.json({user: newUser})
 }
