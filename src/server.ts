@@ -14,7 +14,10 @@ const pool = new Pool({
   connectionString: process.env.PG_URL,
   ssl: {
     rejectUnauthorized: false
-  }
+  },
+  max: 10,
+  idleTimeoutMillis: 3000,
+  connectionTimeoutMillis:10000
 });
 
 const server = express()
