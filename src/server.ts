@@ -14,7 +14,7 @@ dotenv.config();
 
 
 const server = express()
-server.use(enforce.HTTPS({ trustAzureHeader: true }))
+server.use(enforce.HTTPS({ trustProtoHeader: true }))
 server.use(cors());
 server.use(express.urlencoded({extended:false}));
 server.use(express.static(path.join(__dirname,'../public')));
