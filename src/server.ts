@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mainRoutes from './routes';
 import path from 'path';
+import enforce from 'express-sslify';
 
 
 
@@ -13,6 +14,7 @@ dotenv.config();
 
 
 const server = express()
+server.use(enforce.HTTPS({ trustAzureHeader: true }))
 server.use(cors());
 server.use(express.urlencoded({extended:false}));
 server.use(express.static(path.join(__dirname,'../public')));
