@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mainRoutes from './routes';
 import path from 'path';
-import {Pool} from 'pg';
+
 
 
 
@@ -20,4 +20,4 @@ server.use(mainRoutes);
 server.use(function(req:Request, res:Response) {
     res.send('404: Page not Found');
   });
-server.listen(process.env.PORT);
+server.listen(process.env.PORT||80);
