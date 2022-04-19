@@ -3,8 +3,8 @@ import {Request,Response} from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mainRoutes from './routes';
-import path from 'path';
-import enforce from 'express-sslify';
+import path from 'path'
+
 
 
 
@@ -14,7 +14,7 @@ dotenv.config();
 
 
 const server = express()
-server.use(enforce.HTTPS({ trustProtoHeader: true }))
+
 server.use(cors());
 server.use(express.urlencoded({extended:false}));
 server.use(express.static(path.join(__dirname,'../public')));
