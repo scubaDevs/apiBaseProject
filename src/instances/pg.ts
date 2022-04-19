@@ -13,14 +13,7 @@ export const sequelize = new Sequelize({
     dialect: "postgres",
     dialectOptions: {
       ssl: {
-        require: true,
         rejectUnauthorized: false 
-      },
-      pool: {
-        max: 5,
-        min: 0,
-        idle: 10000,
-        acquire: 20000
       }
     },
   });
