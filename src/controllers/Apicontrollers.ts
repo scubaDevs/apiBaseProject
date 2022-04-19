@@ -22,6 +22,15 @@ export const home = async  (req:Request,res: Response)=>{
 };
 
 export const createNewUser = async (req:Request,res:Response)=>{
+    try{
+        await sequelize.authenticate();
+       
+        console.log("It´s working!")
+   
+   
+   }catch(error){
+       console.log("Deu erro: ", error)
+   }
         let email:string = req.body.email;
         let pass:string = req.body.pass;
         let newUser = await User.create({email: email,pass: pass});
