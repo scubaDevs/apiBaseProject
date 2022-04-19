@@ -12,9 +12,10 @@ export const sequelize = new Sequelize({
     port: parseInt(process.env.PG_PORT as string),
     dialect: "postgres",
     dialectOptions: {
+      connectTimeout: 60000,
       ssl: {
         rejectUnauthorized: false ,
-        setTimeout: 50000
+       
       }
     },
   });
