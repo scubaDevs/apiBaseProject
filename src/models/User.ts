@@ -20,11 +20,17 @@ export const User = sequelize.define<ApiUser>('User',{
     },
     pass:{
         type: DataTypes.STRING
+    },
+    createdAt:{
+        type:DataTypes.DATE
+    },
+    updatedAt:{
+        type:DataTypes.DATE
     }
     
 },
 {
     tableName:'users',
-    timestamps: false
+    timestamps: true
 
 });
