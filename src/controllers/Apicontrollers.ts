@@ -17,5 +17,5 @@ export const ping = async (req:Request,res:Response)=>{
 };
 
 export const home = (req:Request,res:Response)=>{
-    res.json({message:'olá mundo'})
+    res.json({message:'olá mundo novo'})
 }
