@@ -14,8 +14,14 @@ exports.User = pg_1.sequelize.define('User', {
     },
     pass: {
         type: sequelize_1.DataTypes.STRING
+    },
+    createdAt: {
+        type: sequelize_1.DataTypes.DATE
+    },
+    updatedAt: {
+        type: sequelize_1.DataTypes.DATE
     }
 }, {
     tableName: 'users',
-    timestamps: false
+    timestamps: true
 });

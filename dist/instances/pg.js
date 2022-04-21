@@ -19,5 +19,5 @@ exports.sequelize = new sequelize_1.Sequelize({
         ssl: {
             rejectUnauthorized: false,
         }
-    },
+    }
 });

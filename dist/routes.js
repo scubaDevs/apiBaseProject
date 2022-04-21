@@ -24,10 +24,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const Apicontrollers = __importStar(require("./controllers/Apicontrollers"));
+const ApiControllers = __importStar(require("./controllers/ApiControllers"));
+const AuthControllers = __importStar(require("./controllers/AuthControllers"));
+const auth_1 = require("./middlewares/auth");
 const router = (0, express_1.Router)();
-router.post('/create', Apicontrollers.createNewUser);
-router.post('/', Apicontrollers.homePost);
-router.get('/ping', Apicontrollers.ping);
-router.get('/', Apicontrollers.home);
+router.get('/ping', ApiControllers.ping);
+router.get('/', ApiControllers.home);
+router.get('/sobre', auth_1.Auth.privateRoute, ApiControllers.sobre);
+router.post('/signup', AuthControllers.signup);
+router.post('/login', AuthControllers.login);
 exports.default = router;

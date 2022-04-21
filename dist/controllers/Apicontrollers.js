@@ -9,40 +9,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.homePost = exports.createNewUser = exports.home = exports.ping = void 0;
-const User_1 = require("../models/User");
+exports.sobre = exports.home = exports.ping = void 0;
 const pg_1 = require("../instances/pg");
-const ping = (req, res) => {
+const ping = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        yield pg_1.sequelize.authenticate();
+        console.log("It´s working!");
+    }
+    catch (error) {
+        console.log("Deu erro: ", error);
+    }
     res.json({ message: 'pong' });
-};
+});
 exports.ping = ping;
-const home = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        yield pg_1.sequelize.authenticate();
-        console.log("It´s working!");
-    }
-    catch (error) {
-        console.log("Deu erro: ", error);
-    }
-    res.json({ msg: 'Olá mundo!' });
-});
-exports.home = home;
-const createNewUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        yield pg_1.sequelize.authenticate();
-        console.log("It´s working!");
-    }
-    catch (error) {
-        console.log("Deu erro: ", error);
-    }
-    let email = req.body.email;
-    let pass = req.body.pass;
-    let newUser = yield User_1.User.create({ email: email, pass: pass });
-    res.json({ user: newUser });
-    res.end();
-});
-exports.createNewUser = createNewUser;
-const homePost = (req, res) => {
-    res.json({ message: "Funcionou" });
+const home = (req, res) => {
+    res.json({ message: 'olá mundo novo' });
 };
-exports.homePost = homePost;
+exports.home = home;
+const sobre = (req, res) => {
+    res.json({ message: 'Esta é a página sobre!' });
+};
+exports.sobre = sobre;
