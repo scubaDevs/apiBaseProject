@@ -1,6 +1,6 @@
 import {Router} from 'express';
-import * as ApiControllers from "./controllers/Apicontrollers";
-import * as AuthControllers from "./controllers/Authcontrollers";
+import * as ApiControllers from "./controllers/apicontrollers";
+import * as AuthControllers from "./controllers/authcontrollers";
 import { Auth } from './middlewares/auth';
 
 
