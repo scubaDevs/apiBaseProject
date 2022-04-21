@@ -1,6 +1,6 @@
 import {Router} from 'express';
-import * as ApiControllers from "./controllers/apicontrollers";
-import * as AuthControllers from "./controllers/authcontrollers";
+import * as ApiControllers from "./controllers/maincontrollers";
+import * as AuthControllers from "./controllers/authmidcontrollers";
 import { Auth } from './middlewares/auth';
 
 
@@ -19,4 +19,3 @@ router.post('/login', AuthControllers.login);
 
 
 export default router;
-

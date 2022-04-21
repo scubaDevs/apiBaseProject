@@ -2,7 +2,7 @@ import express, { ErrorRequestHandler } from 'express';
 import {Request,Response} from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import mainRoutes from './routes';
+import mainRoutes from './routess';
 import path from 'path'
 import passport from 'passport';
 import { error } from 'console';
