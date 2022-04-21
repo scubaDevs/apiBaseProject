@@ -1,7 +1,6 @@
 import {Request,Response} from 'express';
-import {User} from "../models/User";
 import {sequelize} from '../instances/pg';
-import { Auth } from '../middlewares/auth';
+
 
 
 
